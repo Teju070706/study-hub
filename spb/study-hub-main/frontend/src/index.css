@@ -1,0 +1,162 @@
+/* stylelint-disable at-rule-no-unknown */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* stylelint-enable at-rule-no-unknown */
+
+@layer base {
+  :root {
+    --background: 220 20% 97%;
+    --foreground: 224 40% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 224 40% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 40% 12%;
+
+    --primary: 234 62% 26%;
+    --primary-foreground: 40 60% 95%;
+
+    --secondary: 220 16% 92%;
+    --secondary-foreground: 224 40% 12%;
+
+    --muted: 220 16% 94%;
+    --muted-foreground: 220 10% 46%;
+
+    --accent: 38 92% 50%;
+    --accent-foreground: 224 40% 12%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 16% 88%;
+    --input: 220 16% 88%;
+    --ring: 234 62% 26%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 234 62% 18%;
+    --sidebar-foreground: 220 20% 92%;
+    --sidebar-primary: 38 92% 50%;
+    --sidebar-primary-foreground: 224 40% 12%;
+    --sidebar-accent: 234 50% 24%;
+    --sidebar-accent-foreground: 220 20% 92%;
+    --sidebar-border: 234 40% 28%;
+    --sidebar-ring: 38 92% 50%;
+
+    /* Custom tokens */
+    --amber: 38 92% 50%;
+    --amber-light: 40 90% 64%;
+    --amber-foreground: 30 80% 16%;
+    --indigo: 234 62% 26%;
+    --indigo-light: 234 50% 40%;
+    --indigo-dark: 234 62% 18%;
+    --glass: 0 0% 100% / 0.7;
+    --glass-border: 0 0% 100% / 0.2;
+    --success: 152 60% 40%;
+    --success-foreground: 0 0% 100%;
+    --info: 210 80% 52%;
+    --info-foreground: 0 0% 100%;
+
+    --gradient-hero: linear-gradient(135deg, hsl(234 62% 18%) 0%, hsl(234 62% 26%) 40%, hsl(250 50% 32%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(38 92% 50%) 0%, hsl(32 90% 55%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(220 20% 97%) 100%);
+    --shadow-soft: 0 4px 24px -4px hsl(234 62% 26% / 0.08);
+    --shadow-card: 0 2px 16px -2px hsl(234 62% 26% / 0.06);
+    --shadow-elevated: 0 12px 40px -8px hsl(234 62% 26% / 0.15);
+    --shadow-amber: 0 4px 20px -4px hsl(38 92% 50% / 0.3);
+  }
+
+  .dark {
+    --background: 224 40% 6%;
+    --foreground: 220 20% 92%;
+    --card: 224 36% 10%;
+    --card-foreground: 220 20% 92%;
+    --popover: 224 36% 10%;
+    --popover-foreground: 220 20% 92%;
+    --primary: 38 92% 50%;
+    --primary-foreground: 224 40% 12%;
+    --secondary: 224 30% 16%;
+    --secondary-foreground: 220 20% 92%;
+    --muted: 224 30% 16%;
+    --muted-foreground: 220 12% 56%;
+    --accent: 38 92% 50%;
+    --accent-foreground: 224 40% 12%;
+    --destructive: 0 62% 40%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 224 24% 18%;
+    --input: 224 24% 18%;
+    --ring: 38 92% 50%;
+    --sidebar-background: 224 40% 8%;
+    --sidebar-foreground: 220 20% 92%;
+    --sidebar-primary: 38 92% 50%;
+    --sidebar-primary-foreground: 224 40% 12%;
+    --sidebar-accent: 224 30% 14%;
+    --sidebar-accent-foreground: 220 20% 92%;
+    --sidebar-border: 224 24% 18%;
+    --sidebar-ring: 38 92% 50%;
+  }
+
+  /* REMOVED: #lovable-badge selector */
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer utilities {
+  .glass {
+    background: hsl(var(--glass));
+    backdrop-filter: blur(16px);
+    border: 1px solid hsl(var(--glass-border));
+  }
+
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .gradient-accent {
+    background: var(--gradient-accent);
+  }
+
+  .gradient-card {
+    background: var(--gradient-card);
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-elevated {
+    box-shadow: var(--shadow-elevated);
+  }
+
+  .text-gradient {
+    background: var(--gradient-accent);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
